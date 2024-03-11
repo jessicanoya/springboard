@@ -1,0 +1,27 @@
+What is a callback?
+A function that gets executed after another function has finished execution
+
+forEach
+1. Loops through an array
+2. Runs a callback function for each value in the array and then returns undefined
+3. foEach will always return undefine no matter what
+
+map
+1. Creates a empty new array
+2. Iterates through an array
+3. Runs a callback function for each value in the array
+4. Adds the result of that callback function to the new array
+5. Returns the new array
+6. map always returns a new array of the same length
+7. If no 'return' is specified, map will return undefined
+
+When would you use map
+1. You want to transform an arry into another array of the same length
+2. You do not want to overwrite an existing array and instead return a new copy
+
+filter
+1. Creates a new array
+2. Loops through an array
+3. Runs a callback function on each value in the array
+4. If the callback function returns true, that value is pushed to the new array
+5. If the callback function returns false, the value will not be inclued in the new array
