@@ -1,0 +1,84 @@
+Jessica Noya 5.1 The Command Line
+
+Part I
+1. make a directory called first 
+2. change directory to the first folder 
+3. create a file called person.txt 
+4. change the name of person.txt to another.txt 
+5. make a copy of the another.txt file and call it copy.txt 
+6. remove the copy.txt file 
+7. make a copy of the first folder and call it second 
+8. delete the second folder
+
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.1_the_command_line$ mkdir first
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.1_the_command_line$ ls -l
+total 4
+drwxr-xr-x 2 jnoya jnoya 4096 Jan 14 21:10 first
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.1_the_command_line$ cd first/
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.1_the_command_line/first$ touch person.txt
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.1_the_command_line/first$ ls -l
+total 0
+-rw-r--r-- 1 jnoya jnoya 0 Jan 14 21:10 person.txt
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.1_the_command_line/first$ mv person.txt another.txt
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.1_the_command_line/first$ ls -l
+total 0
+-rw-r--r-- 1 jnoya jnoya 0 Jan 14 21:10 another.txt
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.1_the_command_line/first$ cp another.txt copy.txt
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.1_the_command_line/first$ ls -l
+total 0
+-rw-r--r-- 1 jnoya jnoya 0 Jan 14 21:10 another.txt
+-rw-r--r-- 1 jnoya jnoya 0 Jan 14 21:11 copy.txt
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.1_the_command_line/first$ rm copy.txt
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.1_the_command_line/first$ ls -l
+total 0
+-rw-r--r-- 1 jnoya jnoya 0 Jan 14 21:10 another.txt
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.1_the_command_line/first$ cd ../
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.1_the_command_line$ cp -r first/ second
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.1_the_command_line$ ls -l
+total 8
+drwxr-xr-x 2 jnoya jnoya 4096 Jan 14 21:11 first
+drwxr-xr-x 2 jnoya jnoya 4096 Jan 14 21:11 second
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.1_the_command_line$ rm -rf second/
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.1_the_command_line$ ls -l
+total 4
+drwxr-xr-x 2 jnoya jnoya 4096 Jan 14 21:11 first
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.1_the_command_line$
+
+Part II
+1. What does the man command do? Type in man rm. How do you scroll and get out?
+man command displays the user manual of any command. To get out its “q”. To scroll on my computer is either space bar or page up or page down keys.
+
+2. Look at the man page for ls. What does the -l flag do? What does the -a flag do? 
+-l flag : use a long listing format
+-a flag : shows hidden files or in other words, entries that start with “.”
+
+3. How do you jump between words in the terminal? 
+On a windows machine, its alt/ctrl + left/right keys
+
+4. How do you get to the end of a line in terminal?
+On a windows machine, its ctrl + e
+
+5. How do you move your cursor to the beginning in terminal? 
+On a windows machine, its ctrl + a
+
+6. How do you delete a word (without pressing backspace multiple times) in terminal? 
+On a windows machine, its ctrl + w
+
+7. What is the difference between a terminal and shell? 
+Shell interprets the commands while the terminal is just an interface
+
+8. What is an absolute path? 
+An absolute path is the full path
+
+9. What is an relative path? 
+Relative path is the path relative to the directory the user is currently in
+
+10. What is a flag? Give three examples of flags you have used. 
+A flag is a command option that modifies the behavior of a specific command
+a.	rm -rf
+b.	ls -l
+c.	cp -r
+
+11. What do the r and f flags do with the rm command?
+f force deletes without prompting for permission
+r deletes everything recursively

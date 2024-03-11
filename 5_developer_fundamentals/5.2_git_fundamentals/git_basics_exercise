@@ -1,0 +1,46 @@
+Jessica Noya
+
+1. Create a folder called learn_git_again. mkdir learn_git_again
+2. cd into the learn_git_again folder. cd learn_git_again
+3. Create a file called third.txt. touch third.txt
+4. Initialize an empty git repository. git init
+5. Add third.txt to the staging area. git add third.txt
+6. Commit with the message “adding third.txt”. git commit -m "adding third.txt"
+7. Check out your commit with git log. git log
+commit 1e85bf6215186523fd5fdbdb93d633ed5a4b67ea (HEAD -> master)
+Author: Jessica <jessicapnoya@gmail.com>
+Date:   Sun Jan 14 23:18:14 2024 -0500
+
+    adding third.txt
+8. Create another file called fourth.txt. touch fourth.txt
+9. Add fourth.txt to the staging area. git add fourth.txt
+10. Commit with the message “adding fourth.txt”. git commit -m "adding fourth.txt"
+11. Remove the third.txt file. rm third.file
+12. Add this change to the staging area. git add third.txt
+13. Commit with the message “removing third.txt”. git commit -m "removing third.txt"
+14. Check out your commits using git log. git log
+commit 37eea91ac98416098e15c1ff9ca98fbdd5d4ba53 (HEAD -> master)
+Author: Jessica <jessicapnoya@gmail.com>
+Date:   Sun Jan 14 23:22:17 2024 -0500
+
+    removing third.txt
+
+commit ff03ebdce650e69a9fc26ad4ccc981c45fe341e7
+Author: Jessica <jessicapnoya@gmail.com>
+Date:   Sun Jan 14 23:21:19 2024 -0500
+
+    adding fourth.txt
+
+commit 1e85bf6215186523fd5fdbdb93d633ed5a4b67ea
+Author: Jessica <jessicapnoya@gmail.com>
+Date:   Sun Jan 14 23:18:14 2024 -0500
+
+    adding third.txt
+15. Change your global setting to core.pager=cat - you can read more about that in the link:
+(https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration). git config --global core.pager 'cat'
+16. Write the command to list all of the global configurations for git on your machine. You can 
+type git config --global to find out how to do this. git config --global --list
+user.email=jessicapnoya@gmail.com
+user.name=Jessica Noya
+init.defaultbranch=main
+core.pager=cat

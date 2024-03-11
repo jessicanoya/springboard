@@ -1,0 +1,17 @@
+.pacifico-regular {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  body {
+    font-size: 3rem;
+    background-color: rgb(136, 24, 69);
+  }
+
+  .center {
+    background: yellow;
+    text-align: center;
+    border: 5px solid green;
+    margin-top: 50%;
+  }

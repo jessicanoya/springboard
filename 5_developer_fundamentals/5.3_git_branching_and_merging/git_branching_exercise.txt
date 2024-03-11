@@ -1,0 +1,187 @@
+Jessica Noya
+## **Part I**
+
+Answer the following questions:
+
+- What ***git*** command creates a branch? 
+  git branch <name> or git checkout -b <name_of_branch>
+  
+- What is the difference between a fast-forward and recursive merge?
+  fast-foward merge commits happened in a chronological order
+  recursive merge commits did not happen in a chronological order
+  
+- What ***git*** command changes to another branch?
+  git checkout
+  
+- What ***git*** command deletes a branch?
+  git branch -d <name_of_branch>
+
+- How do merge conflicts happen?
+  When people make changes to the same line of the same file under different branches and then try to merge them
+
+## **Part II**
+
+Practice with fast forward and recursive merges! Make a branch and add and commit onto it and merge it back into master.
+
+Try to create your own merge conflict by modifying the same file on two separate commits on two separate branches.
+
+jnoya@DESKTOP-0TBMG2Q:~/springboard$ cd 5.3_git_branching_and_merging/
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git init
+Initialized empty Git repository in /home/jnoya/springboard/5.3_git_branching_and_merging/.git/
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ touch app.css index.html
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        app.css
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ ls -l
+total 0
+-rw-r--r-- 1 jnoya jnoya 0 Jan 15 21:51 app.css
+-rw-r--r-- 1 jnoya jnoya 0 Jan 15 21:51 index.html
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git add .
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git commit -m "created app.css and index.html
+> ^C
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git commit -m "created app.css and index.html"
+[main (root-commit) 71c9ff3] created app.css and index.html
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 app.css
+ create mode 100644 index.html
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git status
+On branch main
+nothing to commit, working tree clean
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ code index.html
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ code index.html
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ code index.html
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   app.css
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git add .
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   app.css
+        modified:   index.html
+
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git commit -m "added code to app.css and index.html"
+[main d707459] added code to app.css and index.html
+ 2 files changed, 27 insertions(+)
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git status
+On branch main
+nothing to commit, working tree clean
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git checkout -b make-prettier
+Switched to a new branch 'make-prettier'
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git branch
+  main
+* make-prettier
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git status
+On branch make-prettier
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   app.css
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ gid add .
+Command 'gid' not found, but can be installed with:
+sudo apt install id-utils
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git add .
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git status
+On branch make-prettier
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   app.css
+        modified:   index.html
+
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git commit -m "added some basic styling"
+[make-prettier 6dfe185] added some basic styling
+ 2 files changed, 9 insertions(+), 2 deletions(-)
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git log --oneline
+6dfe185 (HEAD -> make-prettier) added some basic styling
+d707459 (main) added code to app.css and index.html
+71c9ff3 created app.css and index.html
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git branch
+  main
+* make-prettier
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git branch main
+fatal: A branch named 'main' already exists.
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git checkout main
+Switched to branch 'main'
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   app.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git add .
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git commit -m "changed background color to red"
+[main 110882f] changed background color to red
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git branch
+* main
+  make-prettier
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git merge make-prettier
+Auto-merging app.css
+CONFLICT (content): Merge conflict in app.css
+Automatic merge failed; fix conflicts and then commit the result.
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git status
+On branch main
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+        modified:   index.html
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   app.css
+
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git add app.css
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git commit -m "resolved merge conflict"
+[main 1381361] resolved merge conflict
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git status
+On branch main
+nothing to commit, working tree clean
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git log --oneline
+1381361 (HEAD -> main) resolved merge conflict
+110882f changed background color to red
+6dfe185 (make-prettier) added some basic styling
+d707459 added code to app.css and index.html
+71c9ff3 created app.css and index.html
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git checkout make-prettier
+Switched to branch 'make-prettier'
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git status
+On branch make-prettier
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   app.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git add .
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git commit -m "made font size bigger"
+[make-prettier 756c179] made font size bigger
+ 1 file changed, 1 insertion(+)
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git log --oneline
+756c179 (HEAD -> make-prettier) made font size bigger
+6dfe185 added some basic styling
+d707459 added code to app.css and index.html
+71c9ff3 created app.css and index.html
+jnoya@DESKTOP-0TBMG2Q:~/springboard/5.3_git_branching_and_merging$ git checkout main
+Switched to branch 'main'

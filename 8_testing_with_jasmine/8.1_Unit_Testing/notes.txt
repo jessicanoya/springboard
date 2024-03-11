@@ -1,0 +1,29 @@
+Unit Testing vs Integration Testing
+
+Unit Testing
+    1. Narrow in scope, one unit at a time
+    2. Verify a chuck of code is doing what it is intended to doing
+    3. Simple to write
+    4. Work wells with pure functions that do not have side effects
+        a. Verify a single function returns an expected value based on an argument
+
+Integration Testing
+    1. Broader in scope, multiple units
+    2. Verify that multiple modules of code are working together correctly
+    3. More complex to write
+    4. Used to test impure functions with side effects
+        a. Verify the dependencies between functions are working together to produce expected value
+
+What To Test
+    1. Test every function in at least one way
+    2. Think about 'edges'
+        a. What is the list were empty?
+        b. What about non-interger numbers?
+        c. What id the file can't be found?
+        d. Is the first case/last case handled differently?
+
+Testable Code 
+    1. Write code that is easier to test
+        a. More functions and smaller functions - easier to test
+        b. Don't mix logic and UI function
+        c. Try to keep functions modular
