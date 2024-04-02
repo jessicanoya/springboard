@@ -1,0 +1,16 @@
+some/every methods
+
+some
+- Iterates through an array
+- Runs a callback on each value in the array
+- If the callback return true for at least one single value, return true
+- Otherwise, return false
+- The result of the callback will always be a boolean
+- In other languages, some is something called 'any' - is anything ... etc.
+
+every
+- Iterates through an array
+- Runs a callback on each value in the array
+- If the callback returns false for any single value, return false
+- If it returns false just one, then the entire array is 'false'
+- Otherwise, return true
