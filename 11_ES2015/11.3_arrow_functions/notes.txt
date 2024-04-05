@@ -1,0 +1,13 @@
+Arrow functions
+- Arrow functions are shorthand for function expressions
+- They cannot be named and they only work as functione expressions
+- They are ideal for shortening callbacks
+- Arrow functions have an implicit return if you leave outthe curly braces
+- You will sometimes see () around an arrow function - especially with modern frameworks
+
+Arrow function gotchas
+- If you want to return an object, make sure it's wrapped in () or on more than one line
+- Arrow functions do not have their own 'this' context. If your functions uses the keyword 'this', be wary
+    1. You should not be using arrow functions:
+        i. In an object method
+        ii. When you need your own keyword 'this'
