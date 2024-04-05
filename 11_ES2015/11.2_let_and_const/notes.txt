@@ -1,0 +1,36 @@
+var
+- The var keywork is used to declare variables
+- It used to be the only way to declare a variable
+- When defined in a function, the var keywork scopes a variable to that function
+
+let 
+- It can be reassingned but not redeclared (unlike var)
+    * SyntaxError: Identifier '<someVariable>' has already been declared
+- The let keyword creates a block-scoped variable: a variable that only exists inside a code block
+
+What is a code block?
+Anything inside curly braces (outside of object syntax)
+let and const are scoped to the code block
+{
+    // This is a code block
+    let x = 5;
+    var y = 10;
+}
+
+console.log(x);
+// ReferenceError: x is not defined
+
+console.log(y);
+// 10 
+
+const
+- The const keyword prevents a variable from ever being reassigned or redeclared
+const pi = 3.14;
+pi = 15; // TypeError: Assignment to constant variable
+const pi = 5; // SyntaxError
+- const stands for constant, a value that is not supposed to change
+- const is also block scoped, like let
+{
+    const x = 10;
+}
+console.log(x); // ReferenceError: x is not defined
