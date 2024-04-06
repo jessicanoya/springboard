@@ -11,3 +11,9 @@ Arrow function gotchas
     1. You should not be using arrow functions:
         i. In an object method
         ii. When you need your own keyword 'this'
+
+Arrow functions summary
+- Can only be used as a shorthand for anonymous function expressions
+- Must put parantheses around parameter if there are 0 or 2+ parameters
+- Return statement is implied if you leave out curly braces
+- They do not make their own 'this'
