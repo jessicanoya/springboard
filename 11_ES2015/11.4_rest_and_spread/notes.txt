@@ -1,0 +1,32 @@
+What used to be done?
+- In JS, every function created using the function keyword has access to a special keyword called arguments
+- Turn the array-like-object into an array by making a copy of an array and setting the target of the copy to be the arguments arra-like-object
+
+argument object
+- arguments is not an actual array, it is an 'array-like-object'
+- It has a length property and can be accessed at a specific index, but does not have build in array methods like map, filter, etc.
+- Does not work with arrow functions
+
+rest and spread operator
+- They are both the 'same' operator and use three dots '...'
+
+rest operator
+- When the three dots are part of a function definition, we call the operator the 'rest' operator
+- The rest operator is the last parameter defined in a function and will evaluate to an array of all additional arguments passed in
+    * You can specify several named parameters and collect the rest
+    e.g. function oneOrMoreArguments(first, ...more) {}; // 'it collects the rest'
+- spread only does a shallow copy one level deep, not useful for nested arrays or objects
+
+spread operator
+- The ... syntax, in a different context, is called the spread operator
+- For example, when calling a function, you can 'spread out' array elements
+    e.g. function takesFour(one, two, three, four){
+        // Do something
+    }
+
+    const names = ['Mary', 'Colt', 'Angela', 'Abe'];
+
+    takesFour(...names)
+
+spreading objects
+- You can use the same operator to copy over pieces of an object into a new object
