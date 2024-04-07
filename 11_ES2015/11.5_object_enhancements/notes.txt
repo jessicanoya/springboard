@@ -1,0 +1,5 @@
+Object Methods
+- A shorthand when a key in an object represents a 
+
+Computer Property Names
+- ES2015 allows to create and object with a key that JavaScript can compute at definition
