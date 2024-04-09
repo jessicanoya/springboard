@@ -1,0 +1,11 @@
+Object Destructuring
+- Extract certain values into new variables
+
+Destructuring Functions
+- Used to extrac key/value pairs from an object into variables
+
+Nested Destructuring
+- Objects nested within objects
+
+Destructuring Swap
+- Swapping values between multiple variables
