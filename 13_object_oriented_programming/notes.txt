@@ -1,0 +1,134 @@
+Terminology to know:
+- Paradigm: style of the code.
+- Properties: data
+- Methods: code
+- Object: self-contained pieces/block of code, a collection of properties
+- Instance: and object created from a class
+
+
+What is Object-Oriented Programming (OOP)?
+
+1. OOP is a Programming paradigm based on the concept of objects, paradigm meaning
+it is "how" we write and organize code.
+2. We use objects to model (describe) real world or abstract features.
+    - E.g. user or todo list item.
+3. Objects may contain data (properties) and code (methods). By using objects, 
+we pack data and the corresponding behavior into one block.
+4. In OOP, objects are self-contained pieces/block of code.
+5. Objects are the building blocks of applications, and interact with one another.
+6. Interactions happen thru a publaic interface (API): methods that the code outside
+of the object can access and use to communicate with the object.
+7. OOP was developed with the goal of organizing code, to make it more flexible
+and easier to maintain (avoid "spaghetti code").
+8. Is the most popular paradigm in programming. Another popular one is "functional
+programming".
+
+const user = {
+    user: 'jonas', // Data (property)
+    password: 'pass123', // Data (property)
+
+    loging(password) { // Method
+        // Logic
+    }
+
+    sendMessage(str) { // Method
+        // Sending logic
+    }
+}
+
+9. In traditional OOP we use Classes which creates new objects.
+10. An instance is a real object created from a class. In other words, it contains data. The class
+itself is not an object. Objects (instances) are instantiated from a class, which functions like a
+blueprint.
+
+The 4 fundamental principles of OOP.
+1. Abstraction
+    - Hide or ignore details that don't matter.
+    - E.g. a black box where the user doesn't need to know all the details happening in the background.
+    - Low-level details have been abstracted from the user.
+2. Encapsulation
+    - Keep properties or methods private inside the class.
+    - Some methods can be exposed as a public interface (API).
+    - By keeping it encapsualted, it prevents eternal code from accidentally manipulating internal 
+    properties/state (objects data).
+    - Allows to chance internal implementation without the risk of breaking external code.
+    - Only ever leave essential methods public.
+3. Inheritance
+    - When classes are closely related, you can have one class inherit from the other. This minimizes
+    duplicate code. Child class extends parent class.
+    - Inheritance makes all properties and methods of a certain class available to a child class,
+    forming a heirarchical relationship between classes. This allows us to re-use common logic and to
+    model real-world relationships.
+4. Polymorphism
+    - Greek word that means "many shapes".
+    - A child class can overwrite a method that it inherited from a parent class.
+
+PARENT CLASS
+User {
+    user
+    password
+    email
+
+    login(password) {
+        // Loging logic
+    }
+    sendMessage(str) {
+        // Sending logic
+    }
+}
+
+INHERITANCE - CHILD CLASS - Contains very similar properties that the parent class has
+Admin {
+    user
+    password
+    email
+    permissions
+
+    loging(password, key) { // Own login method overwriting login method inherited from User *Polymorphism*
+        // DIFFERENCE LOGIN
+    }
+    deleteUser(user) {
+        // Deleting user
+    }
+}
+
+INHERITANCE - CHILD CLASS - Contains very similar properties that the parent class has
+Author {
+    user
+    password
+    email
+    posts
+
+    login(password) {  // Own login method overwriting login method inherited from User *Polymorphism*
+        // MORE DIFFERENT
+    }
+    writePost {
+        // Writing logic
+    }
+}
+
+Class -> Instantiation -> Instance
+
+OOP in JavaScript
+- Objects are linked to a prototype object. Each object has a prototype.
+- A prototype contains methods and properties that all objects that are linked to that 
+prototype can access and use.
+    - This is called Prototypal inheritance.
+- Behavior (methods) is delegated to the linked prototype object.
+    - Prototypal Inheritance/Delegation
+    - Object (instance) can access methods -> Prototypal Inheritance/Delegation -> Protoype that contains methods
+
+How to create prototypes in JS?
+There are three ways to do this:
+1. Contructor functions
+    - How OOP has been done in JS since the beginning.
+    - Technique to create objects from a function.
+    - This is how built-in objects like Arrays, Maps or Sets are actually implemented.
+2. ES6 Classes
+    - The modern way of doing OOP is JS.
+    - "Syntactic sugar" behind the scenes since ES6 classes work exactly like construction functions.
+    - ES6 classes do NOT behave like classes in "classical OOP". This is because they use prototypal inheritance
+    which is unique to JavaScript.
+3. Object.create()
+    - The easiest and most straightfoward way of linking an object to a prototype object.
+    - Not as widely used as the other two methods.
