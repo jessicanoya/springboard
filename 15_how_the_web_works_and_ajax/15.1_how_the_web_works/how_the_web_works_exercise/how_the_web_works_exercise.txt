@@ -1,0 +1,116 @@
+## **Part One: Solidify Terminology**
+
+In your own terms, define the following terms:
+
+- What is HTTP?
+HTTP stands for Hypertext Transfer Protocol and its how browsers and servers communicate
+
+- What is a URL?
+URL stands for Uniform Resource Locator and is the address of a unique resource on the internet.
+It is one of the key mechanisms used by browsers to retrieve published resources such as 
+HTML pages, CSS documents, images, etc.
+
+- What is DNS?
+DNS stands for Domain Name System and translates human readable domain names to machine
+readable IP addresses
+
+- What is a query string?
+Part of a URL and assings values to specific paramaters.
+
+- What are two HTTP verbs and how are they different?
+GET: retrieves data from a specified resource and it is one of the most widely used
+POST: submits data to be processed to a specific resource
+
+- What is an HTTP request?
+A request made by a client (web browser) to a server in order to retrieve a web page or other resource
+
+- What is an HTTP response?
+A response is sent by a server to the client (web browser) to provide it with the resources it requested
+
+- What is an HTTP header? Give a couple examples of request and response headers you have seen.
+HTTP headers let the client and the server pass additional information with an HTTP request or response.
+It consists of case-insensitive name followed by a colon, then by its value.
+
+An example of an HTTP header request:
+
+GET /home.html HTTP/1.1
+Host: developer.mozilla.org
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:50.0) Gecko/20100101 Firefox/50.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Referer: https://developer.mozilla.org/testpage.html
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+If-Modified-Since: Mon, 18 Jul 2016 02:36:04 GMT
+If-None-Match: "c561c68d0ba92bbeb8b0fff2a9199f722e3a621a"
+Cache-Control: max-age=0
+
+An example of an HTTP header response:
+
+200 OK
+Access-Control-Allow-Origin: *
+Connection: Keep-Alive
+Content-Encoding: gzip
+Content-Type: text/html; charset=utf-8
+Date: Mon, 18 Jul 2016 16:06:00 GMT
+Etag: "c561c68d0ba92bbeb8b0f612a9199f722e3a621a"
+Keep-Alive: timeout=5, max=997
+Last-Modified: Mon, 18 Jul 2016 02:36:04 GMT
+Server: Apache
+Set-Cookie: mykey=myvalue; expires=Mon, 17-Jul-2017 16:06:00 GMT; Max-Age=31449600; Path=/; secure
+Transfer-Encoding: chunked
+Vary: Cookie, Accept-Encoding
+X-Backend-Server: developer2.webapp.scl3.mozilla.com
+X-Cache-Info: not cacheable; meta data too large
+X-kuma-revision: 1085259
+x-frame-options: DENY
+
+- What are the processes that happen when you type “http://somesite.com/some/page.html” into a browser?
+Scheme: https:// - this is the Protocol
+Domain: somesite.com - an address that points to a specific server's IP address. It does this with DNS.
+Path: /some/ - additional path to the resource in the URL
+Resource: page.html - the name of the resource you want to view. The html indicates its a static file on
+    the server with HTML content. 
+The browser looks up the IP address for the domain, via DNS lookup. Then, the browser initiates TCP (transmission control protocol) connection with the server. Once the browser has a connection to the server, it sends the HTTP request to the server following the rules of communication for the HTTP protocol. The request line determines what the client wants to do (e.g. GET, POST, PUT, PATCH, DELETE). The server will process the request and send back a response. Finally, the browser will render the content.
+
+## **Part Two: Practice Tools**
+
+1. Using ***curl***, make a ***GET*** request to the *icanhazdadjoke.com* API to find all jokes involving the word “pirate”
+jnoya@DESKTOP-0TBMG2Q:~/springboard/15_how_the_web_works_and_ajax$ curl -H "Accept: text/plain" "https://icanhazdadjoke.com/search?term=pirate"
+Why couldn't the kid see the pirate movie? Because it was rated arrr!
+What did the pirate say on his 80th birthday? Aye Matey!
+What does a pirate pay for his corn? A buccaneer!
+Why do pirates not know the alphabet? They always get stuck at "C".
+Why are pirates called pirates? Because they arrr!
+
+
+2. Use ***dig*** to find what the IP address is for *icanhazdadjoke.com*
+jnoya@DESKTOP-0TBMG2Q:~/springboard/15_how_the_web_works_and_ajax$ dig icanhazdadjoke.com
+
+; <<>> DiG 9.18.18-0ubuntu0.22.04.1-Ubuntu <<>> icanhazdadjoke.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 1554
+;; flags: qr rd ad; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 0
+;; WARNING: recursion requested but not available
+
+;; QUESTION SECTION:
+;icanhazdadjoke.com.            IN      A
+
+;; ANSWER SECTION:
+icanhazdadjoke.com.     0       IN      A       104.21.66.15
+icanhazdadjoke.com.     0       IN      A       172.67.198.173
+
+;; Query time: 50 msec
+;; SERVER: 172.20.112.1#53(172.20.112.1) (UDP)
+;; WHEN: Sun May 12 18:41:12 EDT 2024
+;; MSG SIZE  rcvd: 86
+
+3. Make a simple web page and serve it using ***python3 -m http.server***. Visit the page in a browser.
+(springboard) jnoya@DESKTOP-0TBMG2Q:~/springboard/15_how_the_web_works_and_ajax/15.1_how_the_web_works/how_the_web_works_exercise$ python -m http.server
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+127.0.0.1 - - [12/May/2024 19:06:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/May/2024 19:06:27] code 404, message File not found
+127.0.0.1 - - [12/May/2024 19:06:27] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [12/May/2024 19:07:42] "GET / HTTP/1.1" 304 -
