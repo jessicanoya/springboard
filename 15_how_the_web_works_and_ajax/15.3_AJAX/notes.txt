@@ -1,0 +1,19 @@
+Getting axios:
+Can easily include it using a CDN link:
+<script src="https://unpkg.com/axios/dist/axios.js"></script>
+
+To make a request with axios:
+axios.get(url) - completes before the response is received
+async - used in functions e.g.:
+    - async function getDat() {}
+await - keyword that will wait for a response e.g.:
+    - const res = await axios.get('https://api.spacexdata.com/v3/launches/upcoming');
+axios does not have a way to handle errors. This would have to be implemented with try/catch block.
+
+AJAX is asynchronous: 
+This means it does not block the execution of other scripts or the user interface of the web page.
+1. The JavaScript code sends a request to the server
+2. Instead of waiting for the response, the browser continues to execute the scripts and update the user interface.
+3. When the server eventually responds, a callback function is triggered to handle the response.
+
+In traditional synchronous requests, the browser halts all other activities while waiting for a response from the server.
