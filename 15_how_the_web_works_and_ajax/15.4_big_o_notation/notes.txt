@@ -1,0 +1,18 @@
+Simplifying BigO expressions, general rules:
+1. Constants do not matter
+2. Smaller terms do not matter
+    - f(n) = n^2 + n: in this example, "+ n" does not matter because the outcome is almost identical, so it will be f(n) = n^2
+3. Arithmetic operations are constants regardless of input size
+    - For example, these operations are constant O(1):
+        i. 3 * 3
+        ii. 300 * 300
+        iii. x * 21341532121 * 2132132154 + 1
+4. Variable assignment is constant
+    - It doesn't matter how big n is, there is no impact on the time it takes to store a variable O(1)
+5. Accessing elements in array (by index) or object (by key) is constant O(1)
+6. Loops: Take length of the loop times complexity of whatever happens inside the loop
+
+Space complexity: how will memory usage scale as size of inputs increase?
+1. Most primitives (booleans, numbers, undefined, null) are constant space 
+2. Strings O(n) space (where n is the string length)
+3. Reference types (arrays and objects) O(n) where n is the length of the array or keys in object
