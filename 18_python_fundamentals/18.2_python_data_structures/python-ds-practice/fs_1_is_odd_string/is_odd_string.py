@@ -7,7 +7,7 @@ def is_odd_string(word):
     Return True/False, depending on whether sum of those numbers is odd.
 
     For example, these sum to 1, which is odd:
-    
+
         >>> is_odd_string('a')
         True
 
@@ -15,7 +15,7 @@ def is_odd_string(word):
         True
 
     These sum to 4, which is not odd:
-    
+
         >>> is_odd_string('aaaa')
         False
 
@@ -23,9 +23,18 @@ def is_odd_string(word):
         False
 
     Longer example:
-    
+
         >>> is_odd_string('amazing')
         True
     """
+    total = sum((ord(char.lower()) - ord('a') + 1) for char in word)
+    return total % 2 != 0
 
     # Hint: you may find the ord() function useful here
+
+
+print(is_odd_string('a'))
+print(is_odd_string('A'))
+print(is_odd_string('aaaa'))
+print(is_odd_string('AAaa'))
+print(is_odd_string('amazing'))
